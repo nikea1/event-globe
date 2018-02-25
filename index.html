@@ -1,44 +1,54 @@
 <html>
   <head>
   	
-  	<!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
 
   	<title>Hello World</title>
-  	<script
-  	src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  	integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-  	crossorigin="anonymous"></script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="sphere.js"></script>
-    <script>
-	function go() {
-		var texture = "earth1024x1024.jpg";
-		createSphere(document.getElementById("sphere"),texture);
+    
+    <link rel="stylesheet" href="demo.css">
 
-		//var stats = new Stats();
-		// Align top-left
-		//stats.getDomElement().style.position = 'relative';
-		//stats.getDomElement().style.marginLeft = '-40px';
-		//stats.getDomElement().style.left = '50%';
-		
-		//document.getElementById("fps").appendChild(stats.getDomElement());
-		//setInterval(function () {
-		  //stats.update();
-		  
-		//}, 1000 / 60);
-	}
-</script>
+    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript" src="jquery-ui.min.js"></script>
+  	
+    <script type="text/javascript" src="requestanimationframe.polyfill.js"></script>
+
+    <script type="text/javascript" src="sphere-hacked.js"></script>
+
+    <script type="text/javascript" src="jquery.earth-3d.js"></script>
+
+    <script type="text/javascript" src="demo.js"></script>
+
+   
+    <!--
+    <script type="text/javascript" src="sphere.js"></script>
+
+    
+    <script>
+	  function go() {
+		  var texture = "earth1024x1024.jpg";
+		  createSphere(document.getElementById("sphere"),texture);
+	  }
+</script>-->
   </head>
-  <body onload="go()">
+  <body>
   	<h1>Hello world</h1>
-    <canvas id="sphere" width="300" height="300">
+    <canvas id="sphere" width="400" height="400">
     	Sorry this browser does not support canvas
     </canvas> 
+    <canvas id="flights" width="400" height="400"></canvas>
+    <div id="locations"></div>
+
+    <div class="choose_example">
+          Choose example: <select id="example">
+            <option value="simple">Simple earth</option>
+            <option value="simple_tilted">Simple tilted earth</option>
+            <option value="locations">Earth with locations</option>
+            <option value="flights" selected>Earth with locations and flights</option>
+          </select>
+        </div>
 
   </body>
  
